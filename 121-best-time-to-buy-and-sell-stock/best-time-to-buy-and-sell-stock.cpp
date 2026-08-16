@@ -4,15 +4,15 @@ public:
         int n=prices.size();
         int buy=prices[0];
         int profit=0;
-        for(int i=0;i<=n-1;i++)
+        for(int i=1;i<n;i++)
         {
-            if(prices[i]>buy)
+            if(prices[i]<buy)
             {
-                profit=max(profit,prices[i]-buy);
+                buy=prices[i];
             }
             else
             {
-                buy=prices[i];
+                profit=max(profit,prices[i]-buy);
             }
         }
         return profit;
